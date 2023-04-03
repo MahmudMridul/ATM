@@ -1,0 +1,28 @@
+﻿# Ignore obj and bin folders
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.cache
+*.vs/
+
+# Ignore build and debug files
+*.pdb
+*.exe
+*.dll
+*.log
+
+# Ignore NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Ignore Visual Studio files
+.vscode/
+*.sln
+*.sln.docstates
+*.suo
+*.userprefs
+*.vs/

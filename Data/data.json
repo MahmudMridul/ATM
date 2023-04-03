@@ -1,0 +1,38 @@
+[
+  {
+    "CardNumber": "12345678",
+    "Pin": "1234",
+    "FirstName": "Mike",
+    "LastName": "Json",
+    "Balance": 200.0
+  },
+  {
+    "CardNumber": "12345679",
+    "Pin": "1235",
+    "FirstName": "Nike",
+    "LastName": "Kson",
+    "Balance": 1.0
+  },
+  {
+    "CardNumber": "12345680",
+    "Pin": "1236",
+    "FirstName": "Oike",
+    "LastName": "Lson",
+    "Balance": 2.0
+  },
+  {
+    "CardNumber": "12345681",
+    "Pin": "1237",
+    "FirstName": "Pike",
+    "LastName": "Mson",
+    "Balance": 2.0
+  },
+  {
+    "CardNumber": "12345682",
+    "Pin": "1238",
+    "FirstName": "Qike",
+    "LastName": "Nson",
+    "Balance": 2.0
+  }
+
+]
