@@ -10,10 +10,8 @@ namespace ATM.LogUtils
             .WriteTo.File(
                 "Logs/log.txt",
                 rollingInterval: RollingInterval.Day,
-                outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss" +
-            "" +
-            "" +
-            " zzz} [{Level:u3}] ({SourceContext}) {Message:lj}{NewLine}{Exception}");
+                retainedFileCountLimit: 31, 
+                outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss zzz} [{Level:u3}] ({SourceContext}) {Message:lj}{NewLine}{Exception}");
 
         private static readonly ILogger _logger = _configuration.CreateLogger();
 
