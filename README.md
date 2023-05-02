@@ -9,4 +9,4 @@ This is a .NET 6 console application that simulates a simple ATM system. The app
 - Deposit of money into the account
 - Check of the account balance
 - JSON file as a database
-
+- Creates log files for each day
