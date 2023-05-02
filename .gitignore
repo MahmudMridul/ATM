@@ -21,7 +21,7 @@ packages/
 
 # Ignore Visual Studio files
 .vscode/
-*.sln
+
 *.sln.docstates
 *.suo
 *.userprefs
