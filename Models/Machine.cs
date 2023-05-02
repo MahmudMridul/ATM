@@ -1,8 +1,9 @@
-﻿using System.Text.Json;
+﻿using ATM.LogUtils;
+using System.Text.Json;
 
 namespace ATM.Models
 {
-    public class Machine
+    internal class Machine
     {
         public string CurrentCardNumber { get; set; }
         public string CurrentPin { get; set; }
@@ -82,6 +83,7 @@ namespace ATM.Models
             }
             else
             {
+                Logger.Log("Invalid option selected");
                 Console.WriteLine("Invalid option");
             }
             Console.WriteLine("Press any button to exit");
@@ -92,6 +94,7 @@ namespace ATM.Models
         {
             if (amount <= 0)
             {
+                Logger.Log("Invalid amount given during withdraw");
                 Console.WriteLine("Invalid amount");
                 return;
             }
@@ -104,6 +107,7 @@ namespace ATM.Models
                 {
                     if(cardHolder.Balance < amount)
                     {
+                        Logger.Log("User tried to withdraw more than balance");
                         Console.WriteLine("Not enough balance. You current balance is " + cardHolder.Balance);
                     }
                     else
@@ -111,6 +115,7 @@ namespace ATM.Models
                         cardHolder.Balance -= amount;
                         Console.WriteLine("You successfully withdrawed " +  amount + " from your card");
                         Console.WriteLine("Your current balance is " + cardHolder.Balance);
+                        Logger.Log("Successful withdraw");
                         SetCardHolders(cardHolders);
                     }
                     break;
@@ -122,7 +127,8 @@ namespace ATM.Models
         {
             if (amount <= 0)
             {
-                Console.WriteLine("Invalid amount");
+                Console.WriteLine("Invalid amount given during deposit");
+                Logger.Log("Invalid amount");
                 return;
             }
             var cardHolders = GetCardHolders();
@@ -134,6 +140,7 @@ namespace ATM.Models
                     cardHolder.Balance += amount;
                     Console.WriteLine("You successfully deposited " + amount + " to your card");
                     Console.WriteLine("Your current balance is " + cardHolder.Balance);
+                    Logger.Log("Successful deposit  ");
                     SetCardHolders(cardHolders);
                     break;
                 }
@@ -162,6 +169,7 @@ namespace ATM.Models
             if(!ValidCardInfo(cardNumber, pin)) 
             {
                 Console.WriteLine("Invalid card info!");
+                Logger.Log("Invalid card info");
                 return;
             }
             CurrentCardNumber = cardNumber;

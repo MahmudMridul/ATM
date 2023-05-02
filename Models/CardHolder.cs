@@ -2,7 +2,7 @@
 
 namespace ATM.Models
 {
-    public class CardHolder
+    internal class CardHolder
     {
         [JsonPropertyName("CardNumber")]
         public string CardNumber { get; set; }
